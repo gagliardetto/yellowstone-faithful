@@ -71,7 +71,7 @@ func (n DataFrame) HasNext() bool {
 // GetNext returns the value of the 'Next' field and
 // a flag indicating whether the field has a value.
 func (n DataFrame) GetNext() (List__Link, bool) {
-	if n.Next == nil || *n.Next == nil {
+	if n.Next == nil || *n.Next == nil || **n.Next == nil {
 		return nil, false
 	}
 	return **n.Next, true
