@@ -30,12 +30,14 @@ func (n DataFrame) GetHash() (uint64, bool) {
 }
 
 // HasIndex returns whether the 'Index' field is present.
+// If the field is not present, assume the index is 0.
 func (n DataFrame) HasIndex() bool {
 	return n.Index != nil && *n.Index != nil
 }
 
 // GetIndex returns the value of the 'Index' field and
 // a flag indicating whether the field has a value.
+// If the field is not present, assume the index is 0.
 func (n DataFrame) GetIndex() (int, bool) {
 	if n.Index == nil || *n.Index == nil {
 		return 0, false
@@ -44,12 +46,14 @@ func (n DataFrame) GetIndex() (int, bool) {
 }
 
 // HasTotal returns whether the 'Total' field is present.
+// If the field is not present, assume the total is 1.
 func (n DataFrame) HasTotal() bool {
 	return n.Total != nil && *n.Total != nil
 }
 
 // GetTotal returns the value of the 'Total' field and
 // a flag indicating whether the field has a value.
+// If the field is not present, assume the total is 1.
 func (n DataFrame) GetTotal() (int, bool) {
 	if n.Total == nil || *n.Total == nil {
 		return 0, false
